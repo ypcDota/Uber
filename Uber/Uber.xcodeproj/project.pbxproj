@@ -14,6 +14,18 @@
 		F18D6AB31E2BD490007ED770 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F18D6AB11E2BD490007ED770 /* LaunchScreen.storyboard */; };
 		F18D6ABE1E2BD490007ED770 /* UberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D6ABD1E2BD490007ED770 /* UberTests.swift */; };
 		F18D6AC91E2BD490007ED770 /* UberUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D6AC81E2BD490007ED770 /* UberUITests.swift */; };
+		F18D6AE41E2C4005007ED770 /* BaseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D6AE31E2C4005007ED770 /* BaseInfo.swift */; };
+		F18D6AE61E2C403B007ED770 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D6AE51E2C403B007ED770 /* UserInfo.swift */; };
+		F18D6AE81E2C40C4007ED770 /* FxOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D6AE71E2C40C4007ED770 /* FxOperation.swift */; };
+		F18D6AEA1E2C40FD007ED770 /* FxLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D6AE91E2C40FD007ED770 /* FxLogin.swift */; };
+		F18D6AEC1E2C4112007ED770 /* FxRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D6AEB1E2C4112007ED770 /* FxRegister.swift */; };
+		F18D6AEE1E2C412E007ED770 /* FxGetCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D6AED1E2C412E007ED770 /* FxGetCars.swift */; };
+		F18D6AF01E2C416F007ED770 /* FxBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D6AEF1E2C416F007ED770 /* FxBaseController.swift */; };
+		F18D6AF51E2C4207007ED770 /* FxBasePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D6AF41E2C4207007ED770 /* FxBasePage.swift */; };
+		F18D6AF71E2C422B007ED770 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D6AF61E2C422B007ED770 /* LoginPage.swift */; };
+		F18D6AF91E2C4258007ED770 /* GuidePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D6AF81E2C4258007ED770 /* GuidePage.swift */; };
+		F18D6AFB1E2C4281007ED770 /* RegisterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D6AFA1E2C4281007ED770 /* RegisterPage.swift */; };
+		F18D6AFD1E2C42BA007ED770 /* BindPayPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D6AFC1E2C42BA007ED770 /* BindPayPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +59,18 @@
 		F18D6AC41E2BD490007ED770 /* UberUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UberUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F18D6AC81E2BD490007ED770 /* UberUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberUITests.swift; sourceTree = "<group>"; };
 		F18D6ACA1E2BD490007ED770 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F18D6AE31E2C4005007ED770 /* BaseInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInfo.swift; sourceTree = "<group>"; };
+		F18D6AE51E2C403B007ED770 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		F18D6AE71E2C40C4007ED770 /* FxOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FxOperation.swift; sourceTree = "<group>"; };
+		F18D6AE91E2C40FD007ED770 /* FxLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FxLogin.swift; sourceTree = "<group>"; };
+		F18D6AEB1E2C4112007ED770 /* FxRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FxRegister.swift; sourceTree = "<group>"; };
+		F18D6AED1E2C412E007ED770 /* FxGetCars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FxGetCars.swift; sourceTree = "<group>"; };
+		F18D6AEF1E2C416F007ED770 /* FxBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FxBaseController.swift; sourceTree = "<group>"; };
+		F18D6AF41E2C4207007ED770 /* FxBasePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FxBasePage.swift; sourceTree = "<group>"; };
+		F18D6AF61E2C422B007ED770 /* LoginPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		F18D6AF81E2C4258007ED770 /* GuidePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuidePage.swift; sourceTree = "<group>"; };
+		F18D6AFA1E2C4281007ED770 /* RegisterPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPage.swift; sourceTree = "<group>"; };
+		F18D6AFC1E2C42BA007ED770 /* BindPayPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindPayPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				F18D6AA71E2BD48F007ED770 /* Uber */,
+				F18D6ADF1E2C3F35007ED770 /* Resources */,
 				F18D6ABC1E2BD490007ED770 /* UberTests */,
 				F18D6AC71E2BD490007ED770 /* UberUITests */,
 				F18D6AA61E2BD48F007ED770 /* Products */,
@@ -97,12 +122,17 @@
 		F18D6AA71E2BD48F007ED770 /* Uber */ = {
 			isa = PBXGroup;
 			children = (
+				F18D6ADA1E2C3ED0007ED770 /* New Group */,
+				F18D6AD61E2C3E94007ED770 /* Gloable */,
+				F18D6AD71E2C3EA3007ED770 /* Model */,
+				F18D6AD91E2C3EC4007ED770 /* Operation */,
+				F18D6AD81E2C3EB3007ED770 /* ThirdSDK */,
+				F18D6ADB1E2C3EF3007ED770 /* View */,
+				F18D6ADC1E2C3EFC007ED770 /* DB */,
+				F18D6ADD1E2C3F02007ED770 /* Utility */,
+				F18D6ADE1E2C3F1E007ED770 /* Define */,
 				F18D6AA81E2BD48F007ED770 /* AppDelegate.swift */,
 				F18D6AAA1E2BD48F007ED770 /* ViewController.swift */,
-				F18D6AAC1E2BD490007ED770 /* Main.storyboard */,
-				F18D6AAF1E2BD490007ED770 /* Assets.xcassets */,
-				F18D6AB11E2BD490007ED770 /* LaunchScreen.storyboard */,
-				F18D6AB41E2BD490007ED770 /* Info.plist */,
 			);
 			path = Uber;
 			sourceTree = "<group>";
@@ -123,6 +153,125 @@
 				F18D6ACA1E2BD490007ED770 /* Info.plist */,
 			);
 			path = UberUITests;
+			sourceTree = "<group>";
+		};
+		F18D6AD61E2C3E94007ED770 /* Gloable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Gloable;
+			sourceTree = "<group>";
+		};
+		F18D6AD71E2C3EA3007ED770 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F18D6AE31E2C4005007ED770 /* BaseInfo.swift */,
+				F18D6AE51E2C403B007ED770 /* UserInfo.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F18D6AD81E2C3EB3007ED770 /* ThirdSDK */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ThirdSDK;
+			sourceTree = "<group>";
+		};
+		F18D6AD91E2C3EC4007ED770 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				F18D6AE71E2C40C4007ED770 /* FxOperation.swift */,
+				F18D6AE91E2C40FD007ED770 /* FxLogin.swift */,
+				F18D6AEB1E2C4112007ED770 /* FxRegister.swift */,
+				F18D6AED1E2C412E007ED770 /* FxGetCars.swift */,
+			);
+			name = Operation;
+			sourceTree = "<group>";
+		};
+		F18D6ADA1E2C3ED0007ED770 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		F18D6ADB1E2C3EF3007ED770 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F18D6AEF1E2C416F007ED770 /* FxBaseController.swift */,
+				F18D6AF11E2C41A4007ED770 /* Pages */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F18D6ADC1E2C3EFC007ED770 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DB;
+			sourceTree = "<group>";
+		};
+		F18D6ADD1E2C3F02007ED770 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		F18D6ADE1E2C3F1E007ED770 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Define;
+			sourceTree = "<group>";
+		};
+		F18D6ADF1E2C3F35007ED770 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F18D6AE01E2C3F70007ED770 /* Config */,
+				F18D6AE21E2C3F80007ED770 /* Xib */,
+				F18D6AE11E2C3F79007ED770 /* Images */,
+			);
+			name = Resources;
+			path = Uber;
+			sourceTree = "<group>";
+		};
+		F18D6AE01E2C3F70007ED770 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				F18D6AB41E2BD490007ED770 /* Info.plist */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		F18D6AE11E2C3F79007ED770 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F18D6AAF1E2BD490007ED770 /* Assets.xcassets */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		F18D6AE21E2C3F80007ED770 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				F18D6AAC1E2BD490007ED770 /* Main.storyboard */,
+				F18D6AB11E2BD490007ED770 /* LaunchScreen.storyboard */,
+			);
+			name = Xib;
+			sourceTree = "<group>";
+		};
+		F18D6AF11E2C41A4007ED770 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				F18D6AF41E2C4207007ED770 /* FxBasePage.swift */,
+				F18D6AF61E2C422B007ED770 /* LoginPage.swift */,
+				F18D6AF81E2C4258007ED770 /* GuidePage.swift */,
+				F18D6AFA1E2C4281007ED770 /* RegisterPage.swift */,
+				F18D6AFC1E2C42BA007ED770 /* BindPayPage.swift */,
+			);
+			name = Pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +408,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F18D6AE61E2C403B007ED770 /* UserInfo.swift in Sources */,
+				F18D6AF91E2C4258007ED770 /* GuidePage.swift in Sources */,
+				F18D6AEE1E2C412E007ED770 /* FxGetCars.swift in Sources */,
+				F18D6AE81E2C40C4007ED770 /* FxOperation.swift in Sources */,
+				F18D6AFB1E2C4281007ED770 /* RegisterPage.swift in Sources */,
 				F18D6AAB1E2BD48F007ED770 /* ViewController.swift in Sources */,
+				F18D6AE41E2C4005007ED770 /* BaseInfo.swift in Sources */,
+				F18D6AF71E2C422B007ED770 /* LoginPage.swift in Sources */,
+				F18D6AFD1E2C42BA007ED770 /* BindPayPage.swift in Sources */,
+				F18D6AEC1E2C4112007ED770 /* FxRegister.swift in Sources */,
+				F18D6AF01E2C416F007ED770 /* FxBaseController.swift in Sources */,
 				F18D6AA91E2BD48F007ED770 /* AppDelegate.swift in Sources */,
+				F18D6AEA1E2C40FD007ED770 /* FxLogin.swift in Sources */,
+				F18D6AF51E2C4207007ED770 /* FxBasePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +572,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Uber/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pclvyi.Uber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,6 +585,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Uber/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pclvyi.Uber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
