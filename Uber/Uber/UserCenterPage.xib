@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserCenterPage" customModule="Uber" customModuleProvider="target">
+            <connections>
+                <outlet property="button" destination="YEd-id-Tk7" id="spD-sf-mbX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="658" height="1132"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="pPq-Af-VtX">
+                    <rect key="frame" x="0.0" y="0.0" width="638" height="909"/>
+                </imageView>
+                <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEd-id-Tk7">
+                    <rect key="frame" x="5" y="809" width="200" height="100"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="0JA-TO-cFe"/>
+                        <constraint firstAttribute="height" constant="100" id="w3A-be-j8v"/>
+                    </constraints>
+                    <connections>
+                        <action selector="btnClick:" destination="-1" eventType="touchUpInside" id="dAW-95-3dU"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.039215686274509803" green="0.035294117647058823" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="YEd-id-Tk7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="AX2-St-ngA"/>
+                <constraint firstItem="pPq-Af-VtX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QOM-mS-Atb"/>
+                <constraint firstItem="YEd-id-Tk7" firstAttribute="bottom" secondItem="pPq-Af-VtX" secondAttribute="bottom" id="RW7-zo-Q4s"/>
+                <constraint firstAttribute="bottom" secondItem="pPq-Af-VtX" secondAttribute="bottom" constant="223" id="YGP-Yi-VFK"/>
+                <constraint firstItem="pPq-Af-VtX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pIv-7j-LxE"/>
+                <constraint firstAttribute="trailing" secondItem="pPq-Af-VtX" secondAttribute="trailing" constant="20" id="vsi-X5-9ak"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="97" y="-592"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="UserBack.png" width="221" height="453"/>
+    </resources>
+</document>

@@ -10,26 +10,48 @@ import UIKit
 
 class FxBaseController: UIViewController {
 
+    //MARK: - 定义属性
+    var activity : FxActivity?
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+//MARK: - 显示加载动画
+extension FxBaseController {
+    
+    func showActivityInview(view : UIView) ->FxActivity {
+        let activity = FxActivityIndicator(view: view)
+        
+        activity?.frame = view.bounds
+        view.addSubview(activity!)
+        activity?.labelText = ""
+        return activity!
     }
-    */
-
+    func showIndicator(tipMessage : String?,autoHide : Bool,afterDelay : Bool){
+        
+        if activity == nil {
+            activity = showActivityInview(view: self.view)
+        }
+        
+        if tipMessage != nil {
+            activity?.labelText = tipMessage
+            activity?.show(false)
+        }
+        
+        if autoHide && CGFloat((activity?.alpha)!) >= 1.0 {
+            if afterDelay {
+                activity?.hide(true, afterDelay: 1.0)
+            }else {
+                activity?.hide(true)
+            }
+        }
+    }
+    
+    func hideIndicator() {
+        
+        activity?.hide(true)
+    }
 }
