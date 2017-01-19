@@ -26,7 +26,7 @@ class CarAnimationView : BMKAnnotationView {
     
 }
 
-extension HomePage : BMKMapViewDelegate{
+extension HomePage : BMKMapViewDelegate,BMKGeoCodeSearchDelegate{
     
     // 添加百度地图
     func setUpBaiduMap() {
@@ -35,6 +35,7 @@ extension HomePage : BMKMapViewDelegate{
         self.view.addSubview(mapView!)
         startLocation()
         startTimer()
+        geoCoder = BMKGeoCodeSearch()
     }
     
     func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
@@ -43,6 +44,21 @@ extension HomePage : BMKMapViewDelegate{
         return car
     }
     
+    func mapView(_ mapView: BMKMapView!, regionDidChangeAnimated animated: Bool) {
+        
+        // 把大头针的坐标转成经纬度
+        let point = mapView.convert(tuDindBtn.center, toCoordinateFrom: self.view)
+//        print(point)
+        let option = BMKReverseGeoCodeOption()
+        option.reverseGeoPoint = point
+        geoCoder?.reverseGeoCode(option)
+        
+    }
+    
+    func onGetReverseGeoCodeResult(_ searcher: BMKGeoCodeSearch!, result: BMKReverseGeoCodeResult!, errorCode error: BMKSearchErrorCode) {
+        
+        TopLabel.text = result.address
+    }
     //
     func startLocation() {
         

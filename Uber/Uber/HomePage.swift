@@ -10,10 +10,20 @@ import UIKit
 
 let PanWidth : CGFloat = 100
 class HomePage: FxBasePage {
-
+    //MARK: - 控件属性
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var carBtn: UIButton!
     @IBOutlet weak var backImage: UIImageView!
+    @IBOutlet weak var totalPayLabel: UILabel!
+    @IBOutlet weak var payLabel: UILabel!
+    @IBOutlet weak var payBtn: UIButton!
+    @IBOutlet weak var carInfoBackImageView: UIImageView!
+    @IBOutlet weak var destination: UILabel!
+    @IBOutlet weak var tuDindBtn: UIButton!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var TopLabel: UILabel!
+    
+    
     //MARK: - 定义属性
     var showingLeft : Bool? = false
     var mapView : BMKMapView?
@@ -22,7 +32,7 @@ class HomePage: FxBasePage {
     var point : BMKPointAnnotation?
     var carTimer : Timer?
     var isMoveUp : Bool? = false
-    
+    var geoCoder : BMKGeoCodeSearch?
     //MARK: - 懒加载
     lazy var btnHelper : FxButtonHelper? = FxButtonHelper()
     lazy var backControl : UIControl? = {
@@ -69,6 +79,9 @@ class HomePage: FxBasePage {
         self.view.bringSubview(toFront: bottomView)
         
         self.changeCarStyle(carBtn)
+        
+        self.view.bringSubview(toFront: topView)
+        self.view.bringSubview(toFront: tuDindBtn)
     }
     
 //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -85,6 +98,7 @@ class HomePage: FxBasePage {
     override func viewDidAppear(_ animated: Bool) {
         
         super.viewDidAppear(animated)
+
         addLeftView()
         addUserCenterView()
     }
@@ -94,12 +108,13 @@ class HomePage: FxBasePage {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        geoCoder?.delegate = self
         mapView?.delegate = self
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         mapView?.delegate = nil
+        geoCoder?.delegate = nil
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -112,6 +127,16 @@ class HomePage: FxBasePage {
         } else {
             showLeftPanel()
         }
+    }
+    // h获取费用估算
+    @IBAction func getTotalCharge(_ sender: UIButton) {
+        
+        sender.isHidden = true
+        carInfoBackImageView.image = UIImage(named: "FeiYongBack")
+        payLabel.text = "需要的费用"
+        totalPayLabel.text = "66-88"
+        destination.isHidden = false
+        destination.text = "石家庄"
     }
 }
 

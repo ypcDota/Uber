@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         setUpBMKMap()
-//        showGuaidPage()
-        showHomePage()
+        showGuaidPage()
+//        showHomePage()
         window?.makeKeyAndVisible()
         return true
     }
