@@ -14,5 +14,8 @@ class SettingPage: FxBasePage {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.red
+        
+        self.setUpNavWith(title: "返回", selector: #selector(self.doLeft), isRight: false)
+        
     }
 }

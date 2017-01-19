@@ -11,12 +11,19 @@ import UIKit
 let PanWidth : CGFloat = 100
 class HomePage: FxBasePage {
 
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var carBtn: UIButton!
     //MARK: - 定义属性
-//    var leftView : UIView?
-//    var backControl : UIControl?
     var showingLeft : Bool? = false
+    var mapView : BMKMapView?
+    var locService : BMKLocationService?
+    var userCoordinate : CLLocationCoordinate2D?
+    var point : BMKPointAnnotation?
+    var carTimer : Timer?
+    
     
     //MARK: - 懒加载
+    lazy var btnHelper : FxButtonHelper? = FxButtonHelper()
     lazy var backControl : UIControl? = {
     
         let frame = self.view.bounds
@@ -38,11 +45,28 @@ class HomePage: FxBasePage {
         
         return view
     }()
+    
+    //MARK: - 控件方法
+    
+    @IBAction func changeCarStyle(_ sender: UIButton) {
+        btnHelper?.normalImageName = "1.png"
+        btnHelper?.selectedImageName = "CarBtn.png"
+        
+        btnHelper?.setButtonEx(sender)
+        
+    }
     //MARK: - 系统生命周期方法
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.isUserInteractionEnabled = true
+        self.setUpNavWith(title: "account_icon_up.png", selector: #selector(self.leftButtonClick(_:)), isRight: false)
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo_uber_grey_zh_CN.png"))
+        
+        setUpBaiduMap()
         addBackControl()
+        self.view.bringSubview(toFront: bottomView)
+        
+        self.changeCarStyle(carBtn)
     }
     override func viewDidAppear(_ animated: Bool) {
         
@@ -54,13 +78,21 @@ class HomePage: FxBasePage {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         showingLeft = false
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        mapView?.delegate = self
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        mapView?.delegate = nil
+    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     //MARK: -监听控件的点击
-    @IBAction func leftButtonClick(_ sender: Any) {
+     func leftButtonClick(_ sender: Any) {
         if showingLeft! {
             showCenterPanel()
         } else {
@@ -69,6 +101,7 @@ class HomePage: FxBasePage {
     }
 }
 
+// 设置左边的用户中心view
 extension HomePage {
     func addBackControl() {
         
@@ -76,6 +109,7 @@ extension HomePage {
         // 将backControl 调整到最下面
         view.sendSubview(toBack: backControl!)
     }
+    // 点击模板,退出左边的view
     func doTapCenter() {
         // 如果是正在显示leftView, 让他切换显示到
         if showingLeft! {
@@ -86,7 +120,6 @@ extension HomePage {
     // 添加左边的leftView
     func addLeftView() {
         view.addSubview(leftView!)
-//        self.navigationController?.view.addSubview(leftView!)
     }
     
     func showCenterView(view:UIView,offset:CGFloat,shadow:Bool) {
@@ -101,7 +134,7 @@ extension HomePage {
             view.layer.shadowOffset = CGSize(width: offset, height: offset)
         }
     }
-    
+    //MARK: - 显示左边
     func showLeftPanel() {
         showingLeft = true
         showCenterView(view: leftView!, offset: -2, shadow: true)
@@ -125,7 +158,7 @@ extension HomePage {
             }
         }
     }
-    
+    //MARK: - 显示中间
     func showCenterPanel() {
         showingLeft = false
         
@@ -147,6 +180,7 @@ extension HomePage {
     }
 }
 
+//MARK: - 添加用户中心的控制器view
 extension HomePage {
     func addUserCenterView() {
         let userCenterPage = UserCenterPage()
@@ -158,3 +192,12 @@ extension HomePage {
         leftView?.addSubview(userCenterPage.view)
     }
 }
+
+//MARK: - 集成百度地图
+//extension HomePage : BMKMapViewDelegate{
+//    func setUpBaiduMap() {
+//        mapView = BMKMapView(frame: self.view.bounds)
+//        view = mapView
+//    }
+//    
+//}

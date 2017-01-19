@@ -4,7 +4,7 @@
 //
 //  Created by ypc on 17/1/16.
 //  Copyright © 2017年 com.ypc. All rights reserved.
-//
+// @executable_path/Frameworks
 
 /*
  效果:刚开始显示启动屏

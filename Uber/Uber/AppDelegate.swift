@@ -12,15 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var manager : BMKMapManager?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         
-//        window?.rootViewController = GuidPage()
-        
-        showGuaidPage()
-//        showHomePage()
+        setUpBMKMap()
+//        showGuaidPage()
+        showHomePage()
         window?.makeKeyAndVisible()
         return true
     }
@@ -31,9 +30,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = guaidPage
     }
     
+    func setUpBMKMap() {
+        manager = BMKMapManager()
+        // 0SnbuujKknOrHlWX9yGgEOkVsYA5F9B1
+         let ret : Bool? = manager?.start("0SnbuujKknOrHlWX9yGgEOkVsYA5F9B1", generalDelegate: nil)
+//        else {
+//            FxLog("manager start failed!")
+//            return
+//        }
+        if !ret! {
+            FxLog("manager start failed!")
+        }
+        
+    }
     func showHomePage() {
         let homePage = HomePage()
-        window?.rootViewController = homePage
+        let navHomePage = UINavigationController(rootViewController: homePage)
+        window?.rootViewController = navHomePage
         
     }
     func applicationWillResignActive(_ application: UIApplication) {
