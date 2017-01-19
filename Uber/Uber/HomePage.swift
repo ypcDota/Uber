@@ -13,6 +13,7 @@ class HomePage: FxBasePage {
 
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var carBtn: UIButton!
+    @IBOutlet weak var backImage: UIImageView!
     //MARK: - 定义属性
     var showingLeft : Bool? = false
     var mapView : BMKMapView?
@@ -20,7 +21,7 @@ class HomePage: FxBasePage {
     var userCoordinate : CLLocationCoordinate2D?
     var point : BMKPointAnnotation?
     var carTimer : Timer?
-    
+    var isMoveUp : Bool? = false
     
     //MARK: - 懒加载
     lazy var btnHelper : FxButtonHelper? = FxButtonHelper()
@@ -64,10 +65,23 @@ class HomePage: FxBasePage {
         
         setUpBaiduMap()
         addBackControl()
+        addTap()
         self.view.bringSubview(toFront: bottomView)
         
         self.changeCarStyle(carBtn)
     }
+    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        
+//        UIView.animate(withDuration: 0.5) {
+//            
+//           var frame = self.bottomView.frame
+//            if frame.origin.y == self.view.frame.size.height - frame.size.height{
+//            frame.origin.y = self.view.frame.size.height - self.backImage.frame.size.height
+//            }
+//            self.bottomView.frame = frame
+//        }
+//    }
     override func viewDidAppear(_ animated: Bool) {
         
         super.viewDidAppear(animated)
@@ -97,6 +111,38 @@ class HomePage: FxBasePage {
             showCenterPanel()
         } else {
             showLeftPanel()
+        }
+    }
+}
+
+//MARK: - 显示车辆详情信息
+extension HomePage {
+    
+    // 先给bottomView添加一个点击手势
+    func addTap() {
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.doTapUp))
+        
+        bottomView.addGestureRecognizer(tap)
+    }
+    
+    func doTapUp() {
+        isMoveUp = !isMoveUp!
+
+        addAnimation()
+    }
+    
+    // 添加动画
+    func addAnimation() {
+    
+        UIView.animate(withDuration: 0.5) { 
+            var frame = self.bottomView.frame
+            if self.isMoveUp! {// 向上
+                frame.origin.y = self.view.frame.size.height - frame.size.height
+            }else { // 向下走
+               frame.origin.y = self.view.frame.size.height - self.backImage.frame.size.height
+            }
+            self.bottomView.frame = frame
         }
     }
 }
